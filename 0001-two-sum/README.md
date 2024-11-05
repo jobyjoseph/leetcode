@@ -88,3 +88,28 @@ Time complexity is **O(n)** as there are only 2 independent linear loops are run
 Space complexity is **O(n)** because as the input array size increases, the used dictionary size also increases linearly.
 
 <img src="./hashset-performance.png" style="width: 600px" alt="Hashset performance"/>
+
+## 3. More optimized hash table
+
+```javascript
+var twoSum = function(nums, target) {
+    var myMap = new Map();
+    for( i=0; i<nums.length;i++){
+        if(myMap.has(target-nums[i])){
+            return [myMap.get(target-nums[i]),i]
+        }
+        else{
+            myMap.set(nums[i],i)
+        }
+    }
+    return []
+};
+```
+
+We reduced to single loop. Also we are not waiting for the complete hashtable to be constructed. Once the correct index is found, it is returned.
+
+Time complexity is **O(n)** as there is still a loop.
+
+Space complexity is **O(n)** because as the input array size increases, the used dictionary size also increases linearly.
+
+<img src="./optimized-hashtable.png" style="width: 600px" alt="Optimized hashtable performance"/>
