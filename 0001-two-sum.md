@@ -43,3 +43,21 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 # Solutions
 
 ## Brute force approach
+
+```javascript
+var twoSum = function(nums, target) {
+    // first loop to track first index
+    for(let i = 0; i < nums.length; i++) {
+        // second nested loop to track second index
+        for(let j = i + 1; j < nums.length; j++) {
+            let sum = nums[i] + nums[j];
+            if(sum === target) {
+                return [i, j]
+            }
+        }
+    }
+};
+```
+Time complexity is **O(n<sup>2</sup>)** because there is a nested for loop.
+
+Space complexity is **O(1)** because as the input array size increases, the memory used by the program is not increasing.
