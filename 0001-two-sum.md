@@ -42,7 +42,7 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 
 # Solutions
 
-## Brute force approach
+## 1. Brute force approach
 
 ```javascript
 var twoSum = function(nums, target) {
@@ -61,3 +61,26 @@ var twoSum = function(nums, target) {
 Time complexity is **O(n<sup>2</sup>)** because there is a nested for loop.
 
 Space complexity is **O(1)** because as the input array size increases, the memory used by the program is not increasing.
+
+## 2. Using Dictionary
+
+```javascript
+var twoSum = function(nums, target) {
+    // set dictionary
+    const hashSet = {}
+    for(let i = 0; i < nums.length; i++) {
+        hashSet[nums[i]] = i;
+    }
+    
+    for(let j = 0;  j < nums.length; j++) {
+        const remainingTarget = target - nums[j];
+        if(hashSet[remainingTarget] && hashSet[remainingTarget] !== j) {
+            return[j, hashSet[remainingTarget]]
+        }
+    }
+};
+```
+
+Time complexity is **O(n)** as there are only 2 independent linear loops are running. A nested loop is not there.
+
+Space complexity is **O(n)** because as the input array size increases, the used dictionary size also increases linearly.
