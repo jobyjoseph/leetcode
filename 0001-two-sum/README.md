@@ -62,6 +62,8 @@ Time complexity is **O(n<sup>2</sup>)** because there is a nested for loop.
 
 Space complexity is **O(1)** because as the input array size increases, the memory used by the program is not increasing.
 
+![Bruteforce performance](./brute-force-performance.png)
+
 ## 2. Using Dictionary
 
 ```javascript
@@ -84,3 +86,5 @@ var twoSum = function(nums, target) {
 Time complexity is **O(n)** as there are only 2 independent linear loops are running. A nested loop is not there.
 
 Space complexity is **O(n)** because as the input array size increases, the used dictionary size also increases linearly.
+
+![Hashset performance](./hashset-performance.png)

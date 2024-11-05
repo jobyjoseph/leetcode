@@ -1,3 +1,3 @@
-# LeetCode Problems and Solutions
+# LeetCode Problems
 
-1. [Two Sum LeetCode #1](/0001-Two-Sum-LeetCode-1) - Array
+1. [1. Two Sum](/0001-two-sum)
