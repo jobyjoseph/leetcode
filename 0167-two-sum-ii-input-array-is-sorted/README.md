@@ -43,3 +43,30 @@ Explanation: `The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We re
 - numbers is sorted in non-decreasing order.
 - -1000 <= `target` <= 1000
 - The tests are generated such that there is exactly one solution.
+
+# Solutions
+
+## Two pointer approach
+
+```javascript
+var twoSum = function(numbers, target) {
+    let left = 0;
+    let right = numbers.length - 1 ;
+    while(left < right) {
+        const sum = numbers[left] + numbers[right];
+        if(sum > target) {
+            right--;
+        } else if(sum < target) {
+            left++;
+        } else {
+            return [left+1, right+1];
+        }
+    }
+};
+```
+
+Time complexity is **O(n)** due to single loop.
+
+Space complexity is **O(1)** as the extra space or variables does not increase with input size.
+
+<img src="./two-pointer.png" style="width: 600px" alt="Two pointer"/>
