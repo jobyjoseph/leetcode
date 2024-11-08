@@ -83,3 +83,32 @@ Time complexity is **O(n)** as there is only one loop.
 Space complexity is also **O(n)** as the space requirement increases as the input array size increases.
 
 <img src="./hash-table.png" style="width: 600px" alt="Hash table"/>
+
+## Using Moore's voting algorithm
+
+Moore’s Voting Algorithm finds the majority element in a list by maintaining a candidate and a count. It iterates through the list, increasing the count if the current element matches the candidate or decreasing it if it doesn't; when the count reaches zero, it switches the candidate. The final candidate is the majority element, assuming it exists.
+
+```javascript
+var majorityElement = function (nums) {
+    let majority = nums[0];
+    let count = 1;
+    for(let i = 0; i < nums.length; i++) {
+        if(nums[i] == majority) {
+            count++;
+        } else {
+            count--;
+            if(count == 0) {
+                majority = nums[i];
+                count = 1;
+            }
+        }
+    }
+    return majority;
+};
+```
+
+Time complexity is **O(n)**.
+
+Space complexity is **O(1)**.
+
+<img src="./moores-algorithm.png" style="width: 600px" alt="Moore's voting algorithm"/>
