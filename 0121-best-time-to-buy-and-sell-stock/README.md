@@ -51,3 +51,42 @@ Space complexity is **O(1)**.
 
 <img src="./brute-force-performance.png" style="width: 600px" alt="Brute force"/>
 
+## Using single loop
+
+```javascript
+var maxProfit = function(prices) {
+    let maxProfit = 0;
+    let minPrice = prices[0];
+    for(let i = 1; i < prices.length; i++) {
+        if(prices[i] < minPrice) {
+            minPrice = prices[i];
+        } else if(prices[i] - minPrice > maxProfit) {
+            maxProfit = prices[i] - minPrice
+        }
+    }
+    return maxProfit;
+};
+```
+
+OR using `Math.max()`
+
+```javascript
+var maxProfit = function(prices) {
+    let maxProfit = 0;
+    let minPrice = prices[0];
+    for(let i = 1; i < prices.length; i++) {
+        if(prices[i] < minPrice) {
+            minPrice = prices[i];
+        } else {
+            maxProfit = Math.max(maxProfit, prices[i] - minPrice)
+        }
+    }
+    return maxProfit;
+};
+```
+
+Time complexity is **O(n)** as there is only one loop.
+
+Space complexity is **O(1)**.
+
+<img src="./single-loop.png" style="width: 600px" alt="Single loop"/>
