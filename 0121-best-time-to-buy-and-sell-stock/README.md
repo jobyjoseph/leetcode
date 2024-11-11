@@ -27,3 +27,27 @@ Explanation: `In this case, no transactions are done and the max profit = 0.`
 - 1 <= `prices.length` <= 10<sup>5</sup>
 - 0 <= `prices[i]` <= 10<sup>4</sup>
 
+# Solutions
+
+## Brute force approach
+
+```javascript
+var maxProfit = function(prices) {
+    let maxProfit = 0;
+    for(let i = 0; i < prices.length; i++) {
+        for (let j = i + 1; j < prices.length; j++) {
+            if(prices[j] - prices[i] > maxProfit) {
+                maxProfit = prices[j] - prices[i];
+            }
+        }
+    }
+    return maxProfit;
+};
+```
+
+Time complexity is **O(n<sup>2</sup>)**.
+
+Space complexity is **O(1)**.
+
+<img src="./brute-force-performance.png" style="width: 600px" alt="Brute force"/>
+
