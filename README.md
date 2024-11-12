@@ -8,4 +8,6 @@
 
 [169. Majority Element](/0169-majority-element)
 
+[189. Rotate Array](/0189-rotate-array)
+
 [349. Intersection of Two Arrays](/0349-intersection-of-two-arrays)

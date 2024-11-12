@@ -37,3 +37,46 @@ rotate 2 steps to the right: [3,99,-1,-100]
 - Try to come up with as many solutions as you can. There are at least **three** different ways to solve this problem.
 - Could you do it in-place with `O(1)` extra space?
 
+# Solutions
+
+## Using builtin Array methods
+
+```javascript
+var rotate = function(nums, k) {
+    for(let i = 0; i < k; i++) {
+        nums.unshift(nums.pop());
+    }
+};
+```
+
+Basic test cases passed. But, could not submit as it failed with large values of `k`.
+
+Time complexity is **O(n<sup>2</sup>)**, as `unshift()` runs in O(n) time.
+
+Space complexity is **O(1)**.
+
+<img src="./array-methods.png" style="width: 600px" alt="Using array methods"/>
+
+## Using remainder
+
+```javascript
+var rotate = function(nums, k) {
+    let arrayLength = nums.length;
+    k = k % arrayLength;
+    const rotated = [];
+
+    for(let i = 0; i < arrayLength; i++) {
+        rotated[(i + k) % arrayLength] = nums[i]
+    }
+
+    for(let i = 0; i < arrayLength; i++) {
+        nums[i] = rotated[i]
+    }
+};
+```
+
+Time complexity is **O(n)**.
+
+Space complexity is **O(n)**.
+
+<img src="./using-remainder.png" style="width: 600px" alt="Using remainder"/>
