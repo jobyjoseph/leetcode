@@ -80,3 +80,20 @@ Time complexity is **O(n)**.
 Space complexity is **O(n)**.
 
 <img src="./using-remainder.png" style="width: 600px" alt="Using remainder"/>
+
+## Using Array splice
+
+```javascript
+function rotate(nums, k) {
+    k = k % nums.length
+    nums.splice(0, 0, ...nums.splice(nums.length - k, k))
+}
+```
+
+`k` is set to remainder of `k` and length of `nums`. A length of `nums` simply cycles one full circle.
+
+Time complexity is **O(n)**.
+
+Space complexity is **O(1)** as the operations are done in place on the input array.
+
+<img src="./using-splice.png" style="width: 600px" alt="Using remainder"/>
