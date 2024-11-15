@@ -92,6 +92,12 @@ function rotate(nums, k) {
 
 `k` is set to remainder of `k` and length of `nums`. A length of `nums` simply cycles one full circle.
 
+Say, `nums = [1,2,3,4,5,6,7]` and `k = 3`.
+
+`nums.splice(nums.length - k, k)` which resolves to `nums.splice(4, 3)`, removes last 3 elements from the array and return the last 3 elements as an array(`5, 6, 7`). `nums` array now has `[1, 2, 3, 4]`.
+
+`nums.splice(0, 0, ...[5, 6, 7])` inserts `5, 6, 7` at the start of the array. That is how the swapping is done.
+
 Time complexity is **O(n)**.
 
 Space complexity is **O(1)** as the operations are done in place on the input array.
