@@ -48,3 +48,35 @@ Explanation: `The arrays we are merging are [] and [1].`
 
 
 Follow up: Can you come up with an algorithm that runs in `O(m + n)` time?
+
+# Solutions
+
+## Using right pointer
+
+```javascript
+var merge = function(nums1, m, nums2, n) {
+    let rightPointer = nums1.length - 1;
+    let i = m - 1;
+    let j = n - 1;
+    while(j >= 0) {
+        if(i < 0) {
+            nums1[rightPointer] = nums2[j];
+            j--;
+        }
+        else if(nums1[i] < nums2[j]) {
+            nums1[rightPointer] = nums2[j];
+            j--;
+        } else {
+            nums1[rightPointer] = nums1[i];
+            i--
+        }
+        rightPointer--;
+    }
+};
+```
+
+Time complexity is **O(m+n)**.
+
+Space complexity is **O(1)**.
+
+<img src="./right-pointer.png" style="width: 600px" alt="Right pointer"/>
