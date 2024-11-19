@@ -4,6 +4,8 @@
 
 [88. Merge Sorted Array](/0088-merge-sorted-array)
 
+[118. Pascal's Triangle](/0118-pascals-triangle)
+
 [121. Best Time to Buy and Sell Stock](/0121-best-time-to-buy-and-sell-stock)
 
 [167. Two Sum II - Input Array Is Sorted](/0167-two-sum-ii-input-array-is-sorted)
