@@ -40,3 +40,24 @@ Explanation: `There is no way to make a positive profit, so we never buy the sto
 - `1` <= `prices.length` <= `3 * 10`<sup>4</sup>
 - `0` <= `prices[i]` <= `10`<sup>4</sup>
 
+# Solutions
+
+## Simple loop
+
+```javascript
+var maxProfit = function(prices) {
+    let maxProfit = 0;
+    for(let i = 1; i < prices.length; i++) {
+        if(prices[i] > prices[i-1]) {
+            maxProfit += prices[i] - prices[i-1];
+        }
+    }
+    return maxProfit;
+};
+```
+
+Time complexity is **O(n)**.
+
+Space complexity is **O(1)**.
+
+<img src="./simple-loop.png" style="width: 600px" alt="Simple loop"/>
